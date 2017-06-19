@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="">
+	<p>Введите количество яблок</p>
+	<input type="text" name="apP" id="N" placeholder=" у Пети">
+	<br>
+	<input type="text" name="apM" id="M" placeholder=" у Маши">
+	<br>
+	<input type="button" onclick="apple(N, M)" value="Рассчитать">
+</form>
+<script>
+function apple() {
+var applePetja,
+    appleMasha, 
+    appleDima = 8;
+	applePetja = +document.getElementById("N").value;
+	appleMasha = +document.getElementById("M").value;
+if (applePetja < appleMasha) {
+	applePetja = applePetja + appleMasha/2;
+	appleMasha = appleMasha - appleMasha/2;
+} 
+if (appleMasha < 5) {
+	appleMasha = appleMasha+2;
+	appleDima =6;
+}
+if (applePetja <= 7){
+	applePetja = 0;
+}
+else {
+	applePetja = applePetja - 7;
+}
+if (applePetja >= 10) {
+	applePetja = applePetja -10;
+	appleDima = appleDima + 10;
+}
+else {
+	appleMasha = appleMasha - 2;
+	appleDima = appleDima + 2;
+} 
+alert("У Пети "+applePetja+" яблок, "+ " У Маши "+ appleMasha+" яблок, "+" У Димы "+appleDima+" яблок, ");
+}
+</script>
+</body>
+</html>
